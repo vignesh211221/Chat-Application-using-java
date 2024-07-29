@@ -96,8 +96,7 @@ class ClientHandler implements Runnable
 				
 				for (ClientHandler mc : Server.ar) 
 				{
-					// if the recipient is found, write on its
-					// output stream
+					
 					if (mc.name.equals(recipient) && mc.isloggedin==true) 
 					{
 						mc.dos.writeUTF(this.name+" : "+MsgToSend);
@@ -112,7 +111,7 @@ class ClientHandler implements Runnable
 		}
 		try
 		{
-			// closing resources
+			
 			this.dis.close();
 			this.dos.close();
 			
