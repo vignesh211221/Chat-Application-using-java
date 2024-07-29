@@ -11,17 +11,16 @@ public class Client
 	{ 
 		Scanner scn = new Scanner(System.in); 
 		
-		// getting localhost ip 
-		InetAddress ip = InetAddress.getByName("192.168.137.1"); 
 		
-		// establish the connection 
+		InetAddress ip = InetAddress.getByName("LocalHost"); 
+	 
 		Socket s = new Socket(ip, ServerPort);
 		
-		// obtaining input and out streams 
+		
 		DataInputStream dis = new DataInputStream(s.getInputStream()); 
 		DataOutputStream dos = new DataOutputStream(s.getOutputStream()); 
 
-		// sendMessage thread 
+		 
 		Thread sendMessage = new Thread(new Runnable() 
 		{ 
 			@Override
@@ -41,7 +40,7 @@ public class Client
 			} 
 		}); 
 		
-		// readMessage thread 
+		
 		Thread readMessage = new Thread(new Runnable() 
 		{ 
 			@Override
